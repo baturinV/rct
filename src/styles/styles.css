@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+body {
+    background-color: #292929;
+    color: #fff;
+}
+header {
+    background-color: #1a1a1a;
+    box-shadow: 0px 0px 3px #b0f347;
+}
+header .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    min-height: 80px;
+    gap: 15px;
+}
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+.logo {
+    font-size: 30px;
+    color: #b0f347;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.menu-button {
+    display: block;
+    padding: 10px 13px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #b0f347;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.menu-button:hover {
+    background-color: #fff400;
+}
+footer {
+    background-color: #1a1a1a;
+    margin-top: auto;
+}
+footer .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    min-height: 80px;
+}
+.main-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 600px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px #b0f347;
+    margin: 40px auto;
+    padding: 20px;
+    gap: 20px;
+}
+input {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #b0f347;
+    outline: none;
+    background-color: #1a1a1a;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+input[type="radio"] {
+    width: auto;
+}
+select {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #b0f347;
+    outline: none;
+    background-color: #1a1a1a;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 10px;
+    text-transform: capitalize;
+}
+input[type="button"] {
+    background-color: #b0f347;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+}
+input[type="button"]:hover {
+    background-color: #fff400;
+}
+label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-transform: uppercase;
+    color: #fff;
+}
+label:hover {
+    color: #b0f347;
+}
+.main-form__validate {
+    color: #f34c22;
+    font-family: "Roboto", sans-serif;
+}
+.data {
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.data__item {
+    padding: 30px 15px;
+    min-width: 150px;
+    text-align: center;
+    border-radius: 5px;
+    color: #000;
+}
+.data__item.add {
+    background-color: #b0f347;
+}
+.data__item.spend {
+    background-color: #f34c22;
+}
+.data__title {
+    font-size: 30px;
+    color: #b0f347;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+.filter-container {
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.filter-button {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    background-color: #b0f347;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.filter-button.is-active {
+    background-color: #fff400;
+}
+.data-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.data-add span {
+    color: #b0f347;
+    font-size: 20px;
+    font-weight: 700;
+}
+.data-spend span {
+    color: #f34c22;
+    font-size: 20px;
+    font-weight: 700;
+}
+.data-difference span {
+    color: #fff400;
+    font-size: 20px;
+    font-weight: 700;
+}
+.pie {
+    height: 500px;
+}
