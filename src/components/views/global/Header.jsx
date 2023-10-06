@@ -1,9 +1,7 @@
 import React from "react";
 import Button from "../../comps/Button";
 
-const Header = (props) => {
-    const { setShowPage } = props;
-
+const Header = () => {
     return (
         <>
             <header>
@@ -13,20 +11,17 @@ const Header = (props) => {
                         <Button
                             title={"Home"}
                             className={"menu-button"}
-                            buttonClick={setShowPage}
-                            href={"main"}
+                            href={"/"}
                         />
                         <Button
                             title={"Stat"}
                             className={"menu-button"}
-                            buttonClick={setShowPage}
-                            href={"stat"}
+                            href={"/stat/all"}
                         />
                         <Button
                             title={"Planing"}
                             className={"menu-button"}
-                            buttonClick={setShowPage}
-                            href={"plan"}
+                            href={"/plan"}
                         />
                     </div>
                 </div>

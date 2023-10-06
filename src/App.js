@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/views/global/Header";
 import Footer from "./components/views/global/Footer";
 import Main from "./components/pages/Main";
@@ -8,7 +9,6 @@ import Plan from "./components/pages/Plan";
 import "./styles/styles.css";
 
 function App() {
-    const [showPage, setShowPage] = useState("main");
     const [data, setData] = useState([
         {
             amount: 1000,
@@ -24,15 +24,19 @@ function App() {
 
     return (
         <>
-            <Header setShowPage={setShowPage} />
+            <Header />
             <main>
-                {showPage === "main" ? (
-                    <Main data={data} setData={setData} />
-                ) : showPage === "stat" ? (
-                    <Stat data={data} />
-                ) : showPage === "plan" ? (
-                    <Plan />
-                ) : null}
+                <Routes>
+                    <Route
+                        path={"/stat/:view"}
+                        element={<Stat data={data} />}
+                    />
+                    <Route path={"/plan"} element={<Plan />} />
+                    <Route
+                        path={"/"}
+                        element={<Main data={data} setData={setData} />}
+                    />
+                </Routes>
             </main>
             <Footer />
         </>

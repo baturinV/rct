@@ -1,7 +1,7 @@
 import React from "react";
 
 const FilterButton = (props) => {
-    const { title, className, isActive, setIsActive, action } = props;
+    const { title, className, isActive, action } = props;
 
     let classes = className;
     if (isActive === title) {
@@ -12,7 +12,6 @@ const FilterButton = (props) => {
         <button
             className={classes}
             onClick={(event) => {
-                setIsActive(title);
                 action(title);
             }}>
             {title}

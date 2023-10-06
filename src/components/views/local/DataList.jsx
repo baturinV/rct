@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FilterButton from "../../comps/FilterButton";
 import { ResponsivePieCanvas } from "@nivo/pie";
 
 const DataList = (props) => {
-    const { title, data } = props;
-
-    const [isActive, setIsActive] = useState("all");
+    const { title, data, view } = props;
+    const navigate = useNavigate();
     const [filteredData, setFilteredData] = useState(data);
 
     const filterData = (filter) => {
+        navigate("/stat/" + filter);
         setFilteredData(
             filter !== "all" ? data.filter((el) => el.action === filter) : data
         );
@@ -123,27 +124,24 @@ const DataList = (props) => {
     return (
         <>
             <div className="container">
-                <h2 className="data__title">{title}</h2>
+                {title && <h2 className="data__title">{title}</h2>}
                 <div className={"filter-container"}>
                     <FilterButton
                         className={"filter-button"}
                         title={"all"}
-                        isActive={isActive}
-                        setIsActive={setIsActive}
+                        isActive={view}
                         action={filterData}
                     />
                     <FilterButton
                         className={"filter-button"}
                         title={"add"}
-                        isActive={isActive}
-                        setIsActive={setIsActive}
+                        isActive={view}
                         action={filterData}
                     />
                     <FilterButton
                         className={"filter-button"}
                         title={"spend"}
-                        isActive={isActive}
-                        setIsActive={setIsActive}
+                        isActive={view}
                         action={filterData}
                     />
                 </div>
@@ -168,7 +166,7 @@ const DataList = (props) => {
                         DIFFERENCE : <span>{addSum - spendSum}</span>
                     </p>
                 </div>
-                {isActive === "spend" && (
+                {view === "spend" && (
                     <div className={"pie"}>
                         <MyResponsivePieCanvas />
                     </div>
